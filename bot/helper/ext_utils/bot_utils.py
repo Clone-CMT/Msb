@@ -45,37 +45,37 @@ def bt_selection_buttons(id_):
     buttons = ButtonMaker()
     BASE_URL = config_dict["BASE_URL"]
     if config_dict["WEB_PINCODE"]:
-        buttons.ubutton("Pilih File", f"{BASE_URL}/app/files/{id_}")
-        buttons.ibutton("Kode Pin", f"btsel pin {gid} {pincode}")
+        buttons.ubutton("Select Files", f"{BASE_URL}/app/files/{id_}")
+        buttons.ibutton("Pincode", f"btsel pin {gid} {pincode}")
     else:
         buttons.ubutton(
-            "Pilih File", f"{BASE_URL}/app/files/{id_}?pin_code={pincode}"
+            "Select Files", f"{BASE_URL}/app/files/{id_}?pin_code={pincode}"
         )
-    buttons.ibutton("Selesai Memilih", f"btsel done {gid} {id_}")
-    buttons.ibutton("Batalkan", f"btsel cancel {gid}")
+    buttons.ibutton("Done Selecting", f"btsel done {gid} {id_}")
+    buttons.ibutton("Cancel", f"btsel cancel {gid}")
     return buttons.build_menu(2)
 
 
 async def initiate_help_messages():
     mirror, yt, clone = await gather(
         telegraph.create_page(
-            title="Bantuan Mirror Leech KQRM Bot", content=MIRROR_HELP_MESSAGE
+            title="Mirror-Leech Command Usage", content=MIRROR_HELP_MESSAGE
         ),
         telegraph.create_page(
-            title="Bantuan YT-DLP KQRM Bot", content=YT_HELP_MESSAGE
+            title="YTDLP Command Usage", content=YT_HELP_MESSAGE
         ),
         telegraph.create_page(
-            title="Bantuan Clone KQRM Bot", content=CLONE_HELP_MESSAGE
+            title="Clone Command Usage", content=CLONE_HELP_MESSAGE
         ),
     )
     buttons = ButtonMaker()
-    buttons.ubutton("🤖 Petunjuk Penggunaan [Mirror-Leech]", f"https://telegra.ph/{mirror['path']}")
+    buttons.ubutton("Usage Guide [Mirror-Leech]", f"https://telegra.ph/{mirror['path']}")
     COMMAND_USAGE["main"] = buttons.build_menu(1)
     buttons.reset()
-    buttons.ubutton("🤖 Petunjuk Penggunaan [YT-DLP]", f"https://telegra.ph/{yt['path']}")
+    buttons.ubutton("Usage Guide [YT-DLP]", f"https://telegra.ph/{yt['path']}")
     COMMAND_USAGE["yt"] = buttons.build_menu(1)
     buttons.reset()
-    buttons.ubutton("🤖 Petunjuk Penggunaan [Clone]", f"https://telegra.ph/{clone['path']}")
+    buttons.ubutton("Usage Guide [Clone]", f"https://telegra.ph/{clone['path']}")
     COMMAND_USAGE["clone"] = buttons.build_menu(1)
 
 
@@ -83,7 +83,7 @@ async def get_telegraph_list(telegraph_content):
     path = [
         (
             await telegraph.create_page(
-                title="Pencari KQRM Bot", content=content
+                title="Mirror-Leech-Bot Drive Search", content=content
             )
         )["path"]
         for content in telegraph_content
@@ -91,7 +91,7 @@ async def get_telegraph_list(telegraph_content):
     if len(path) > 1:
         await telegraph.edit_telegraph(path, telegraph_content)
     buttons = ButtonMaker()
-    buttons.ubutton("🔎 Lihat", f"https://telegra.ph/{path[0]}")
+    buttons.ubutton("🔎 VIEW", f"https://telegra.ph/{path[0]}")
     return buttons.build_menu(1)
 
 
