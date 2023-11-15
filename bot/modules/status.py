@@ -143,13 +143,13 @@ async def status_pages(_, query):
                 elif tstatus == MirrorStatus.STATUS_SAMVID:
                     tasks["SamVid"] += 1
 
-        msg = f"""DL : {tasks['Download']} | UP : {tasks['Upload']} | SD : {tasks['Seed']} | AR : {tasks['Archive']}
-EX : {tasks['Extract']} | SP : {tasks['Split']} | QD : {tasks['QueueDl']} | QU : {tasks['QueueUp']}
-CL : {tasks['Clone']} | CH : {tasks['CheckUp']} | PA : {tasks['Pause']} | SV : {tasks['SamVid']}
+        msg = f"""𝙳𝙻 : {tasks['Download']} | 𝚄𝙿 : {tasks['Upload']} | 𝚂𝙳 : {tasks['Seed']} | 𝙰𝚁 : {tasks['Archive']}
+𝙴𝚇 : {tasks['Extract']} | 𝚂𝙿 : {tasks['Split']} | 𝚀𝙳 : {tasks['QueueDl']} | 𝚀𝚄 : {tasks['QueueUp']}
+𝙲𝙻 : {tasks['Clone']} | 𝙲𝙷 : {tasks['CheckUp']} | 𝙿𝙰 : {tasks['Pause']} | 𝚂𝚅 : {tasks['SamVid']}
 
-Kec. Seed : {get_readable_file_size(seed_speed)}/s
-Kec. Unduh : {get_readable_file_size(dl_speed)}/s
-Kec. Unggah : {get_readable_file_size(up_speed)}/s
+𝚂𝚙𝚎𝚎𝚍 𝚂𝚎𝚎𝚍 : {get_readable_file_size(seed_speed)}/s
+𝚂𝚙𝚎𝚎𝚍 𝚄𝚗𝚍𝚞𝚑 : {get_readable_file_size(dl_speed)}/s
+𝚂𝚙𝚎𝚎𝚍 𝚄𝚗𝚐𝚐𝚊𝚑 : {get_readable_file_size(up_speed)}/s
 
 @{bot.me.username}
 """
