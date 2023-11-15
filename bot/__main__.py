@@ -213,8 +213,8 @@ async def stats(_, message):
 async def start(client, message):
     buttons = ButtonMaker()
     buttons.ubutton(
-        "Owner", "https://t.me/save_usdt")
-    buttons.ubutton("Channel", "https://t.me/arakurumi")
+        "Owner", "https://subscene.com/u/1271292")
+    buttons.ubutton("Channel", "https://t.me/+4_Tbq43N4vkxZjI1")
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(client, message):
         start_string = f"""
