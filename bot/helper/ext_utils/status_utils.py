@@ -15,30 +15,30 @@ from bot.helper.telegram_helper.button_build import ButtonMaker
 SIZE_UNITS = ["B", "KB", "MB", "GB", "TB", "PB"]
 
 class MirrorStatus:
-    STATUS_DOWNLOADING = "Unduh"
-    STATUS_UPLOADING = "Unggah"
-    STATUS_QUEUEDL = "AntriDownload"
-    STATUS_QUEUEUP = "AntriUpload"
-    STATUS_PAUSED = "Henti"
-    STATUS_ARCHIVING = "Arsip"
-    STATUS_EXTRACTING = "Ekstrak"
-    STATUS_CLONING = "Clone"
-    STATUS_SEEDING = "Seed"
-    STATUS_SPLITTING = "Bagi"
-    STATUS_CHECKING = "Cek"
-    STATUS_SAMVID = "SampleVideo"
+    STATUS_DOWNLOADING = "𝑼𝒏𝒅𝒖𝒉"
+    STATUS_UPLOADING = "𝑼𝒏𝒈𝒈𝒂𝒉"
+    STATUS_QUEUEDL = "𝑨𝒏𝒕𝒓𝒊𝑫𝒐𝒘𝒏"
+    STATUS_QUEUEUP = "𝑨𝒏𝒕𝒓𝒊𝑼𝒑"
+    STATUS_PAUSED = "𝑱𝒆𝒅𝒂"
+    STATUS_ARCHIVING = "𝑨𝒓𝒔𝒊𝒑"
+    STATUS_EXTRACTING = "𝑬𝒌𝒔𝒕𝒓𝒂𝒌"
+    STATUS_CLONING = "𝑪𝒍𝒐𝒏𝒆"
+    STATUS_SEEDING = "𝑺𝒆𝒆𝒅"
+    STATUS_SPLITTING = "𝑴𝒆𝒎𝒃𝒂𝒈𝒊"
+    STATUS_CHECKING = "𝑪𝒆𝒌"
+    STATUS_SAMVID = "𝑺𝒂𝒎𝒑𝒍𝒆𝑽𝒊𝒅𝒆𝒐"
      
 STATUS_VALUES = [
-    ("ALL", "All"),
-    ("DL", MirrorStatus.STATUS_DOWNLOADING),
-    ("UP", MirrorStatus.STATUS_UPLOADING),
-    ("QD", MirrorStatus.STATUS_QUEUEDL),
-    ("QU", MirrorStatus.STATUS_QUEUEUP),
-    ("AR", MirrorStatus.STATUS_ARCHIVING),
-    ("EX", MirrorStatus.STATUS_EXTRACTING),
-    ("CL", MirrorStatus.STATUS_CLONING),
-    ("SD", MirrorStatus.STATUS_SEEDING),
-    ("SV", MirrorStatus.STATUS_SAMVID)
+    ("𝐀𝐋𝐋", "All"),
+    ("𝐃𝐋", MirrorStatus.STATUS_DOWNLOADING),
+    ("𝐔𝐏", MirrorStatus.STATUS_UPLOADING),
+    ("𝐐𝐃", MirrorStatus.STATUS_QUEUEDL),
+    ("𝐐𝐔", MirrorStatus.STATUS_QUEUEUP),
+    ("𝐀𝐑", MirrorStatus.STATUS_ARCHIVING),
+    ("𝐄𝐗", MirrorStatus.STATUS_EXTRACTING),
+    ("𝐂𝐋", MirrorStatus.STATUS_CLONING),
+    ("𝐒𝐃", MirrorStatus.STATUS_SEEDING),
+    ("𝐒𝐕", MirrorStatus.STATUS_SAMVID)
 ]
 
 
@@ -188,5 +188,6 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
                     buttons.ibutton(label, f"status {sid} st {status_value}")
     buttons.ibutton("🆘", f"status {sid} ref", position="header")
     button = buttons.build_menu(8)   
+    msg += "════❰ 𝑪𝑴𝑻 𝑴𝒂𝒔𝒂𝒎𝒃𝒂 ❱════"
     msg += f"\n<b>▼ :</b> <code>{get_readable_file_size(net_io_counters().bytes_recv)}</code> | <b>▲ :</b> <code>{get_readable_file_size(net_io_counters().bytes_sent)}</code> | <b>🕯 :</b> <code>{get_readable_time(time() - botStartTime)}</code>"    
     return msg, button
