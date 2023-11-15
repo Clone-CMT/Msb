@@ -188,5 +188,5 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
                     buttons.ibutton(label, f"status {sid} st {status_value}")
     buttons.ibutton("🆘", f"status {sid} ref", position="header")
     button = buttons.build_menu(8)   
-    msg += f"\n<b>▼ :</b> <code>{get_readable_file_size(dl_speed)}/s</code> | <b>▲ :</b> <code>{get_readable_file_size(up_speed)}/s</code>" | <b>🕯 :</b> <code>{get_readable_time(time() - botStartTime)}</code>"    
+    msg += f"\n<b>▼ :</b> <code>{get_readable_file_size(dl_speed)}/s</code> | <b>▲ :</b> <code>{get_readable_file_size(up_speed)}/s</code> | <b>🕯 :</b> <code>{get_readable_time(time() - botStartTime)}</code>"    
     return msg, button
