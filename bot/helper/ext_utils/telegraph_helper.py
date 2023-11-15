@@ -77,7 +77,7 @@ class TelegraphHelper:
 
 
 telegraph = TelegraphHelper(
-    "KQRM", "https://t.me/arakurumi"
+    "Pea Masamba", "https://t.me/peamasamba"
 )
 
 bot_loop.run_until_complete(telegraph.create_account())
