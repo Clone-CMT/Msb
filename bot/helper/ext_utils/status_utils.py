@@ -150,8 +150,8 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
             msg += f"\n<b>├🛸 Kecepatan :</b> <code>{task.speed()}</code>"
             if hasattr(task, "seeders_num"):
                 try:
-                    msg += f"\n<b>├🌱 Seeders :</b> <code>{task.seeders_num()}</code>"
-                    msg += f"\n<b>├🐌 Leechers :</b> <code>{task.leechers_num()}</code>"
+                    msg += f"\n<b>├🌱 Seed :</b> <code>{task.seeders_num()}</code>"
+                    msg += f"\n<b>├🐌 Leech :</b> <code>{task.leechers_num()}</code>"
                 except:
                     pass
         elif tstatus == MirrorStatus.STATUS_SEEDING:
@@ -164,12 +164,12 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
             msg += f"\n<b>├📦 Ukuran : </b> <code>{task.size()}</code>"
         msg += f"\n<b>├📱 ID :</b> <code>{task.listener.message.from_user.id}</code>"
         msg += f"\n<b>├🦹 User :</b> <code>{task.listener.message.from_user.first_name}</code>"
-        msg += f"\n<b>└</b>📵 <code>/{BotCommands.CancelTaskCommand[0]} {task.gid()}</code>\n\n"
+        msg += f"\n<b>└📵 Stop :</b> <code>/{BotCommands.CancelTaskCommand[0]} {task.gid()}</code>\n\n"
 
     if len(msg) == 0 and status == "All":
         return None, None
     elif len(msg) == 0:
-        msg = f"<b>Tidak ada tugas</b> <code>{status}</code>!\n\n"
+        msg = f"<b>Tak ada tugas</b> <code>{status}</code>!\n\n"
     buttons = ButtonMaker()
     if not is_user:
         buttons.ibutton("☮️", "status 0 ov", position="header")
