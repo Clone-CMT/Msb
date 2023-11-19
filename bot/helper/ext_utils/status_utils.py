@@ -146,7 +146,7 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
             MirrorStatus.STATUS_SAMVID,
         ]:
             msg += f"\n<b>├🪫 Diproses :</b> <code>{task.processed_bytes()}</code>"
-            msg += f"\n<b>├🪫 Total :</b> <code>{task.size()}</code>"
+            msg += f"\n<b>├🔋 Total :</b> <code>{task.size()}</code>"
             msg += f"\n<b>├🕰 Estimasi :</b> <code>{task.eta()}</code>"
             msg += f"\n<b>├🛸 Kecepatan :</b> <code>{task.speed()}</code>"
             if hasattr(task, "seeders_num"):
