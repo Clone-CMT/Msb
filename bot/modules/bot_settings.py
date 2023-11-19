@@ -724,7 +724,7 @@ async def load_config():
     ALLDEBRID_API = environ.get("ALLDEBRID_API", "")
     if len(ALLDEBRID_API) != 0:
         ALLDEBRID_API = ""
-        
+
     INDEX_URL = environ.get("INDEX_URL", "").rstrip("/")
     if len(INDEX_URL) == 0:
         INDEX_URL = ""
