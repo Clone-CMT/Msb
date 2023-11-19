@@ -305,7 +305,7 @@ class TaskConfig:
             except:
                 pass
         if username := self.user.username:
-            self.tag = f"@{username}"
+            self.tag = f"<b>@{username}</b>"
         else:
             self.tag = self.message.from_user.mention
 
