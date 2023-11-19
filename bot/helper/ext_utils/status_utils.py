@@ -99,7 +99,7 @@ def get_progress_bar_string(pct):
     cFull = int(p // 8)
     p_str = "◕" * cFull
     p_str += "◔" * (12 - cFull)
-    return f"[{p_str}]"
+    return f"{p_str}"
 
 
 def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
@@ -134,12 +134,12 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
         tasks[start_position : STATUS_LIMIT + start_position], start=1
     ):
         tstatus = task.status()
-        msg += f"💾 Nama:<blockquote><code>{escape(f'{task.name()}')}</code></blockquote>"
-        msg += f"\n┌┤{get_progress_bar_string(task.progress())}[<code>{task.progress()}</code>]"
+        msg += f"\n💾 Nama:<blockquote><code>{escape(f'{task.name()}')}</code></blockquote>"
+        msg += f"\n{get_progress_bar_string(task.progress())} ► <code>{task.progress()}</code>"
         if task.listener.isSuperChat:
-            msg += f"\n<b>├📲 Status :</b> <a href='{task.listener.message.link}'>{tstatus}</a>"
+            msg += f"\n<b>┌📲 Status :</b> <a href='{task.listener.message.link}'>{tstatus}</a>"
         else:
-            msg += f"\n<b>├📲 Status :</b> <code>{tstatus}</code>"
+            msg += f"\n<b>┌📲 Status :</b> <code>{tstatus}</code>"
         if tstatus not in [
             MirrorStatus.STATUS_SPLITTING,
             MirrorStatus.STATUS_SEEDING,
