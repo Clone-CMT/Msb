@@ -163,7 +163,7 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
             msg += f"\n<b>├🛸 Kecepatan : </b> <code>{task.seed_speed()}</code>"
         else:
             msg += f"\n<b>├📦 Ukuran : </b> <code>{task.size()}</code>"
-        msg += f"\n<b>├📱 ID :</b> <code>{task.listener.message.from_user.id}</code>"
+        msg += f"\n<b>├🔖 ID :</b> <code>{task.listener.message.from_user.id}</code>"
         msg += f"\n<b>├🦹 User :</b> <code>{task.listener.message.from_user.first_name}</code>"
         msg += f"\n<b>└📵 Stop :</b> <code>/{BotCommands.CancelTaskCommand[0]} {task.gid()}</code>\n\n"
 
