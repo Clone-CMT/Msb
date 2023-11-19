@@ -201,7 +201,7 @@ async def stats(_, message):
 <b>Waktu Mesin  :</b> <code>{osUptime}</code>
 <b>Diperbarui   :</b> <code>{last_commit}</code>
 
-<b>Cerita Hari ini       :</b> 
+<b>Quotes       :</b> 
 <code>{get_quotes()}</code>
 </pre>
 """
@@ -214,8 +214,8 @@ async def stats(_, message):
 async def start(client, message):
     buttons = ButtonMaker()
     buttons.ubutton(
-        "Website", "https://www.comelmuewa84.eu.org")
-    buttons.ubutton("Group", "https://t.me/peamasamba")
+        "Owner", "https://t.me/save_usdt")
+    buttons.ubutton("Channel", "https://t.me/arakurumi")
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(client, message):
         start_string = f"""
