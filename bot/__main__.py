@@ -397,7 +397,7 @@ async def restart_notification():
 <pre languange="bash"><b>Hari      :</b> <code>{now.strftime('%A')}</code>
 <b>Tanggal   :</b> <code>{now.strftime('%d %B %Y')}</code>
 <b>Waktu     :</b> <code>{now.strftime('%H:%M:%S WIB')}</code>
-<b>Kutipan Hari Ini    :</b>
+<b>Kutipan Hari Ini:</b>
 <code>{get_quotes()}</code>
 </pre>           
 """
