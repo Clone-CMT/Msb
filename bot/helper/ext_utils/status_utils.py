@@ -172,7 +172,7 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
         msg = f"<b>Tidak ada tugas</b> <code>{status}</code>!\n\n"
     buttons = ButtonMaker()
     if not is_user:
-        buttons.ibutton("S͛ᴛⷮaͣᴛⷮs͛", "status 0 ov", position="header")
+        buttons.ibutton("𝚂𝚝𝚊𝚝𝚜", "status 0 ov", position="header")
     if len(tasks) > STATUS_LIMIT:
         msg += f"<b>Step :</b> <code>{page_step}</code>"
         msg += f"\n<b>Halaman :</b> <code>{page_no}/{pages}</code>"
@@ -186,7 +186,7 @@ def get_readable_message(sid, is_user, page_no=1, status="All", page_step=1):
         for label, status_value in STATUS_VALUES:
             if status_value != status:
                 buttons.ibutton(label, f"status {sid} st {status_value}")
-    buttons.ibutton("Aͣdͩmͫiͥn", f"status {sid} ref", position="header")
+    buttons.ibutton("𝙰𝚍𝚖𝚒𝚗", f"status {sid} ref", position="header")
     button = buttons.build_menu(8)
     msg += "════❰ 𝑪𝑴𝑻 𝑴𝒂𝒔𝒂𝒎𝒃𝒂 ❱════"
     msg += f"\n<b>▼ :</b> <code>{get_readable_file_size(net_io_counters().bytes_recv)}</code> | <b>▲ :</b> <code>{get_readable_file_size(net_io_counters().bytes_sent)}</code> | <b>🕯 :</b> <code>{get_readable_time(time() - botStartTime)}</code>"
