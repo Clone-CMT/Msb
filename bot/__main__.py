@@ -201,7 +201,7 @@ async def stats(_, message):
 <b>Waktu Mesin  :</b> <code>{osUptime}</code>
 <b>Diperbarui   :</b> <code>{last_commit}</code>
 
-<b>Quotes       :</b> 
+<b>Kutipan       :</b> 
 <code>{get_quotes()}</code>
 </pre>
 """
@@ -214,8 +214,8 @@ async def stats(_, message):
 async def start(client, message):
     buttons = ButtonMaker()
     buttons.ubutton(
-        "Owner", "https://t.me/save_usdt")
-    buttons.ubutton("Channel", "https://t.me/arakurumi")
+        "Owner", "https://www.comelmuewa84.eu.org")
+    buttons.ubutton("Group", "https://t.me/peamasamba")
     reply_markup = buttons.build_menu(2)
     if await CustomFilters.authorized(client, message):
         start_string = f"""
@@ -273,7 +273,7 @@ async def ping(_, message):
     end_time = int(round(time() * 1000))
     await editMessage(
         reply, 
-        f"🤖 <b>Respon Bot :</b> <code>{end_time - start_time} ms</code>"
+        f"<b>Respon Bot :</b> <code>{end_time - start_time} ms</code>"
     )
 
 
@@ -374,7 +374,7 @@ async def restart_notification():
 <pre languange="bash"><b>Hari      :</b> <code>{now.strftime('%A')}</code>
 <b>Tanggal   :</b> <code>{now.strftime('%d %B %Y')}</code>
 <b>Waktu     :</b> <code>{now.strftime('%H:%M:%S WIB')}</code>
-<b>Quotes    :</b>
+<b>Kutipan   :</b>
 <code>{get_quotes()}</code>
 </pre>           
 """
@@ -397,7 +397,7 @@ async def restart_notification():
 <pre languange="bash"><b>Hari      :</b> <code>{now.strftime('%A')}</code>
 <b>Tanggal   :</b> <code>{now.strftime('%d %B %Y')}</code>
 <b>Waktu     :</b> <code>{now.strftime('%H:%M:%S WIB')}</code>
-<b>Quotes    :</b>
+<b>Kutipan Hari Ini    :</b>
 <code>{get_quotes()}</code>
 </pre>           
 """
