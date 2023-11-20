@@ -168,7 +168,7 @@ bot.add_handler(
     CallbackQueryHandler(
         status_pages, 
         filters=regex(
-            "^status"
+            "status"
         )
     )
 )
