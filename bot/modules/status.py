@@ -151,7 +151,7 @@ async def status_pages(_, query):
 𝚂𝚙𝚎𝚎𝚍 𝚄𝚗𝚍𝚞𝚑 : {get_readable_file_size(dl_speed)}/s
 𝚂𝚙𝚎𝚎𝚍 𝚄𝚗𝚐𝚐𝚊𝚑 : {get_readable_file_size(up_speed)}/s
 
-@{bot.me.username}
+By: 🅿🅴🅰 🅼🅰🆂🅰🅼🅱🅰
 """
         await query.answer(msg, show_alert=True)
 
